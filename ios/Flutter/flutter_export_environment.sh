@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\3501\StudioProjects\eastri_customer_app"
+export "FLUTTER_ROOT=C:\Users\91892\fvm\versions\3.27.1"
+export "FLUTTER_APPLICATION_PATH=D:\FlutterProject\Eastri"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
