@@ -1,10 +1,10 @@
-import 'package:eastri_customer_app/views/screens/auth_screen.dart';
+import 'package:eastri_customer_app/views/screens/login_screen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
-  static const String authScreen = '/authScreen';
+  static const String loginScreen = '/loginScreen';
 
   static final List<GetPage> routes = [
-    GetPage(name: authScreen, page: () => AuthScreen())
+    GetPage(name: loginScreen, page: () => LoginScreen())
   ];
 }
