@@ -1,3 +1,6 @@
+import 'package:eastri_customer_app/res/appColors/app_colors.dart';
+import 'package:eastri_customer_app/utils/appStrings/app_strings.dart';
+import 'package:eastri_customer_app/views/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -5,6 +8,28 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: CustomAppbar(),
+      body: _buildAuthText(context),
+    );
+  }
+
+  Widget _buildAuthText(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(AppStrings.letsJoinWithUs,
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Colors.black)),
+        Text(AppStrings.enterYourPhoneNumberAccountToGetStarted,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: AppColors.darkGrey))
+      ],
+    );
   }
 }

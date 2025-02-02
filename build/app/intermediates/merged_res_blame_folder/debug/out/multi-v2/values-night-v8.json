@@ -4,7 +4,7 @@
             "outputFile": "com.example.eastri_customer_app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\3501\\StudioProjects\\eastri_customer_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\FlutterProject\\Eastri\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
