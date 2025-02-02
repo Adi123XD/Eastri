@@ -9,7 +9,7 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(),
+      appBar: CustomAppbar(onPressed: () => Navigator.of(context).pop()),
       body: _buildAuthText(context),
     );
   }
@@ -17,7 +17,7 @@ class AuthScreen extends StatelessWidget {
   Widget _buildAuthText(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(AppStrings.letsJoinWithUs,
             style: Theme.of(context)
@@ -32,4 +32,6 @@ class AuthScreen extends StatelessWidget {
       ],
     );
   }
+
+  
 }

@@ -8,6 +8,7 @@ class AppTheme {
       primaryColor: AppColors.primaryColor,
       scaffoldBackgroundColor: Colors.white,
       useMaterial3: true,
+      appBarTheme: AppBarTheme(backgroundColor: AppColors.secondaryColor),
       textTheme: TextTheme(
         headlineLarge: GoogleFonts.inter(
           fontSize: 32,
