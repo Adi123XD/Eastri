@@ -18,20 +18,21 @@ class AppTheme {
         headlineMedium: GoogleFonts.inter(
           fontSize: 24,
           fontWeight: FontWeight.w600,
-          color: Colors.white70,
+          color: Colors.white,
         ),
         headlineSmall: GoogleFonts.inter(
           fontSize: 20,
           fontWeight: FontWeight.w600,
-          color: Colors.white70,
+          color: Colors.white,
         ),
         bodyLarge: GoogleFonts.inter(
           fontSize: 18,
-          color: Colors.white70,
+          color: Colors.white,
         ),
         bodyMedium: GoogleFonts.inter(
           fontSize: 16,
-          color: Colors.white60,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
         bodySmall: GoogleFonts.inter(
           fontSize: 14,
