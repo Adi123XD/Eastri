@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
             ),
           )),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.loginScreen,
+      initialRoute: AppRoutes.startScreen,
       debugShowCheckedModeBanner: false,
     );
   }
