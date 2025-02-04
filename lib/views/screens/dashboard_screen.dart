@@ -1,0 +1,249 @@
+import 'package:eastri_customer_app/res/appColors/app_colors.dart';
+import 'package:eastri_customer_app/widgets/custom_bottom_navigation_bar.dart';
+import 'package:eastri_customer_app/widgets/dashboard_container.dart';
+import 'package:eastri_customer_app/widgets/greeting_section.dart';
+import 'package:eastri_customer_app/widgets/service_items.dart';
+import 'package:flutter/material.dart';
+
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      backgroundColor: AppColors.dashboardBg,
+      body: SafeArea(
+        child: Column(
+          children: [
+            GreetingSection(),
+            Expanded(
+              child: Transform.translate(
+                offset: const Offset(0, -20),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.dashboardBg,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 36.0,
+                      vertical: 26.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "Services",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Flexible(
+                                    child: ServiceItem(
+                                      imagePath:
+                                          'assets/images/dashboard/iron2.png',
+                                      onTap: () {
+                                        print("Iron 2 tapped");
+                                      },
+                                      imageHeight: screenWidth * 0.2,
+                                      imageWidth: screenWidth * 0.2,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  const Text(
+                                    "Iron",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Flexible(
+                                    child: ServiceItem(
+                                      imagePath:
+                                          'assets/images/dashboard/iron1.png',
+                                      onTap: () {
+                                        print("Iron 1 tapped");
+                                      },
+                                      imageHeight: screenWidth * 0.3,
+                                      imageWidth: screenWidth * 0.3,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 15),
+                                  const Text(
+                                    "Steamed Iron",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        Center(
+                          child: SizedBox(
+                            width: screenWidth * 0.8,
+                            height: 50,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                print("Schedule Pickup tapped");
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.globalButton,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                              ),
+                              child: const Text(
+                                "Schedule Pickup",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Text(
+                          "Active orders",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        GestureDetector(
+                          onTap: () {
+                            print("Order container tapped");
+                          },
+                          child: Container(
+                            width: screenWidth * 0.8,
+                            height: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(19),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  blurRadius: 5,
+                                  offset: const Offset(5, 10),
+                                ),
+                              ],
+                            ),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Icon(
+                                    Icons.home,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const SizedBox(width: 15),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: const [
+                                    Text(
+                                      "Order no. 57290854",
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    Text(
+                                      "Track order",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xFF153241),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        DashboardContainer(
+                          items: [
+                            DashboardItem(
+                              imagePath:
+                                  'assets/images/dashboard/DashCotainer1.png',
+                              line1: 'FEATURED FOR YOU',
+                              line2: 'Time to Reorder!',
+                              line3:
+                                  '10 shirts and 5 trousers are your go-to. Earn 20 reward points when you schedule now!',
+                            ),
+                            DashboardItem(
+                              imagePath:
+                                  'assets/images/dashboard/DashCotainer2.png',
+                              line1: 'FEATURED FOR YOU',
+                              line2: "It's winter!",
+                              line3: 'Special Care for woolens available.',
+                            ),
+                            DashboardItem(
+                              imagePath:
+                                  'assets/images/dashboard/DashCotainer3.png',
+                              line1: 'FEATURED FOR YOU',
+                              line2: 'Try Eastri Pro for Rs. 50/- off',
+                              line3: 'Ends in 00:28:11',
+                            ),
+                            DashboardItem(
+                              imagePath:
+                                  'assets/images/dashboard/DashCotainer4.png',
+                              line1: 'FEATURED FOR YOU',
+                              line2: 'Your laundry will be ready tomorrow.',
+                              line3: 'Need express delivery?',
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
+    );
+  }
+}

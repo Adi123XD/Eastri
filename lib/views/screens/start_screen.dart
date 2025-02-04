@@ -44,14 +44,14 @@ class _StartScreenState extends State<StartScreen>
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/images/background1.png',
+            'assets/images/startScreen/background1.png',
             fit: BoxFit.cover,
           ),
           Center(
             child: FadeTransition(
               opacity: _fadeAnimation,
               child: Image.asset(
-                'assets/images/eastriLogo.png',
+                'assets/images/startScreen/eastriLogo.png',
                 width: 250,
                 height: 250,
               ),
