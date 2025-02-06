@@ -2,11 +2,11 @@ import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:eastri_customer_app/utils/appRoutes/app_routes.dart';
 import 'package:eastri_customer_app/utils/appStrings/app_strings.dart';
 import 'package:eastri_customer_app/utils/sizeConfig/app_sizeconfig.dart';
-import 'package:eastri_customer_app/views/widgets/custom_appbar.dart';
 import 'package:eastri_customer_app/views/widgets/custom_button.dart';
 import 'package:eastri_customer_app/views/widgets/custom_textField.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl_phone_field/country_picker_dialog.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -71,7 +71,7 @@ class _AuthScreenState extends State<AuthScreen> {
           _buildPhoneInput(context),
           Spacer(),
           Padding(
-            padding: const EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.only(bottom: 20),
             child: CustomButton(
                 isEnabled: isFormValided,
                 buttonName: AppStrings.continueText,
@@ -132,7 +132,15 @@ class _AuthScreenState extends State<AuthScreen> {
           child: IntlPhoneField(
             controller: phoneController,
             keyboardType: TextInputType.phone,
+            dropdownIcon: Icon(Icons.arrow_drop_down_rounded),
+            pickerDialogStyle: PickerDialogStyle(
+                backgroundColor: AppColors.darkGrey,
+                searchFieldCursorColor: AppColors.primaryColor),
             style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: Colors.black),
+            dropdownTextStyle: Theme.of(context)
                 .textTheme
                 .bodyMedium!
                 .copyWith(color: Colors.black),

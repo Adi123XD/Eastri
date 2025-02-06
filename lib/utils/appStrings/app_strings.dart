@@ -9,8 +9,11 @@ class AppStrings {
   static const String phoneNumberIsRequired = "Phone number is required";
   static const String phoneNumber = "Phone number";
   static const String letsJoinWithUs = "Let's join with us";
+  static const String pinIsIncorrect ="Pin is incorrect";
   static const String enterYourAccountDetailsToGetStarted =
       "Enter your account details to get started.";
   static const String enterYourPhoneEmailAccountToGetStarted =
       "Enter your phone Email account to get started.";
+  static const String enterYourOtpCode = "Enter OTP Code";
+  static const String enterYourA4DigitCode = "Enter a 4- digit code sent to ";
 }

@@ -194,6 +194,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "pinput",
+      "rootUri": "file:///C:/Users/91892/AppData/Local/Pub/Cache/hosted/pub.dev/pinput-5.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "platform",
       "rootUri": "file:///C:/Users/91892/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.6",
       "packageUri": "lib/",
@@ -254,6 +260,12 @@
       "languageVersion": "3.5"
     },
     {
+      "name": "universal_platform",
+      "rootUri": "file:///C:/Users/91892/AppData/Local/Pub/Cache/hosted/pub.dev/universal_platform-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/91892/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -284,7 +296,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2025-02-02T14:44:28.583379Z",
+  "generated": "2025-02-06T17:52:19.310961Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///C:/Users/91892/fvm/versions/3.27.1",
