@@ -8,4 +8,5 @@ class AppColors {
   static const title2 = Color(0x9C000000);
   static const dashboardBg = Color(0xFFF1F1F1);
   static const globalButton = Color(0xFF2C6A89);
+  static const walletContainer = Color(0xFF2C6A89);
 }

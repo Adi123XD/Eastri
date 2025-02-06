@@ -1,15 +1,15 @@
-import 'package:eastri_customer_app/views/screens/dashboard_screen.dart';
+import 'package:eastri_customer_app/views/screens/dashboard_screen/dashboard_screen.dart';
 import 'package:eastri_customer_app/views/screens/onboarding_screen.dart';
 import 'package:eastri_customer_app/views/screens/start_screen.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
-  static const String loginScreen = '/loginScreen';
+  static const String onBoardScreen = '/onBoardScreen';
   static const String startScreen = '/startScreen';
   static const String dashboardScreen = '/dashboardScreen';
 
   static final List<GetPage> routes = [
-    GetPage(name: loginScreen, page: () => OnBoardScreen()),
+    GetPage(name: onBoardScreen, page: () => OnBoardScreen()),
     GetPage(name: startScreen, page: () => StartScreen()),
     GetPage(name: dashboardScreen, page: () => DashboardScreen()),
   ];

@@ -1,3 +1,4 @@
+import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class GreetingSection extends StatelessWidget {
@@ -59,29 +60,45 @@ class GreetingSection extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(height: 35),
-            Row(
-              children: [
-                const Icon(
-                  Icons.location_on_sharp,
-                  color: Colors.white,
-                  size: 13,
+            const SizedBox(height: 25),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                height: 24,
+                width: screenWidth * 0.75,
+                decoration: BoxDecoration(
+                  color: AppColors.globalButton,
+                  borderRadius: BorderRadius.circular(16),
                 ),
-                const SizedBox(width: 8),
-                SizedBox(
-                  width: screenWidth * 0.6,
-                  child: const Text(
-                    'Durlabh Niwas, 1/461, Dr Baba Saheb Chawk',
-                    style: TextStyle(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.location_on_sharp,
                       color: Colors.white,
-                      fontSize: 12.5,
+                      size: 13,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
+                    const SizedBox(width: 5),
+                    Expanded(
+                      child: Text(
+                        'Durlabh Niwas, 1/461, Dr Baba Saheb Chawk',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12.5,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    const Icon(
+                      Icons.keyboard_arrow_down_outlined,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            )
           ],
         ),
       ),

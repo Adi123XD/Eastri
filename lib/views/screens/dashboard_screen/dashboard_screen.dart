@@ -1,8 +1,10 @@
 import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:eastri_customer_app/widgets/custom_bottom_navigation_bar.dart';
-import 'package:eastri_customer_app/widgets/dashboard_container.dart';
+import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/dashboard_container.dart';
+import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/environment_container.dart';
 import 'package:eastri_customer_app/widgets/greeting_section.dart';
-import 'package:eastri_customer_app/widgets/service_items.dart';
+import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/service_items.dart';
+import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/wallet_container.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -51,61 +53,23 @@ class DashboardScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Flexible(
-                                    child: ServiceItem(
-                                      imagePath:
-                                          'assets/images/dashboard/iron2.png',
-                                      onTap: () {
-                                        print("Iron 2 tapped");
-                                      },
-                                      imageHeight: screenWidth * 0.2,
-                                      imageWidth: screenWidth * 0.2,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 15),
-                                  const Text(
-                                    "Iron",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                            ServiceItem(
+                              imagePath: 'assets/images/dashboard/iron2.png',
+                              onTap: () {
+                                print("Iron 2 tapped");
+                              },
+                              imageHeight: screenWidth * 0.2,
+                              imageWidth: screenWidth * 0.2,
+                              text: 'Iron',
                             ),
-                            Expanded(
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Flexible(
-                                    child: ServiceItem(
-                                      imagePath:
-                                          'assets/images/dashboard/iron1.png',
-                                      onTap: () {
-                                        print("Iron 1 tapped");
-                                      },
-                                      imageHeight: screenWidth * 0.3,
-                                      imageWidth: screenWidth * 0.3,
-                                    ),
-                                  ),
-                                  const SizedBox(height: 15),
-                                  const Text(
-                                    "Steamed Iron",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                            ServiceItem(
+                              imagePath: 'assets/images/dashboard/iron1.png',
+                              onTap: () {
+                                print("Iron 1 tapped");
+                              },
+                              imageHeight: screenWidth * 0.33,
+                              imageWidth: screenWidth * 0.33,
+                              text: "Steamed Iron",
                             ),
                           ],
                         ),
@@ -115,9 +79,7 @@ class DashboardScreen extends StatelessWidget {
                             width: screenWidth * 0.8,
                             height: 50,
                             child: ElevatedButton(
-                              onPressed: () {
-                                print("Schedule Pickup tapped");
-                              },
+                              onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: AppColors.globalButton,
                                 shape: RoundedRectangleBorder(
@@ -205,35 +167,44 @@ class DashboardScreen extends StatelessWidget {
                           items: [
                             DashboardItem(
                               imagePath:
-                                  'assets/images/dashboard/DashCotainer1.png',
+                                  'assets/images/dashboard/DashContainer.png',
                               line1: 'FEATURED FOR YOU',
                               line2: 'Time to Reorder!',
                               line3:
                                   '10 shirts and 5 trousers are your go-to. Earn 20 reward points when you schedule now!',
+                              buttonText: 'Claim & Schedule',
                             ),
                             DashboardItem(
                               imagePath:
-                                  'assets/images/dashboard/DashCotainer2.png',
+                                  'assets/images/dashboard/DashContainer2.png',
                               line1: 'FEATURED FOR YOU',
                               line2: "It's winter!",
                               line3: 'Special Care for woolens available.',
+                              buttonText: 'Order now',
                             ),
                             DashboardItem(
                               imagePath:
-                                  'assets/images/dashboard/DashCotainer3.png',
+                                  'assets/images/dashboard/DashContainer3.png',
                               line1: 'FEATURED FOR YOU',
                               line2: 'Try Eastri Pro for Rs. 50/- off',
                               line3: 'Ends in 00:28:11',
+                              buttonText: 'Flat 50% off',
                             ),
                             DashboardItem(
                               imagePath:
-                                  'assets/images/dashboard/DashCotainer4.png',
+                                  'assets/images/dashboard/DashContainer4.png',
                               line1: 'FEATURED FOR YOU',
                               line2: 'Your laundry will be ready tomorrow.',
                               line3: 'Need express delivery?',
+                              buttonText: 'Upgrade to Express',
                             ),
                           ],
                         ),
+                        const SizedBox(height: 20),
+                        WalletContainer(),
+                        SizedBox(height: 20),
+                        EnvironmentContainer(),
+                        SizedBox(height: 20),
                       ],
                     ),
                   ),

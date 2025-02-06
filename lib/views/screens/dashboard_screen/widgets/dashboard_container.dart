@@ -1,15 +1,21 @@
+import 'package:eastri_customer_app/res/appColors/app_colors.dart';
+import 'package:eastri_customer_app/utils/appRoutes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:get/get.dart';
 
 class DashboardItem {
   final String imagePath;
   final String line1;
   final String line2;
   final String line3;
+  final String buttonText;
   const DashboardItem({
     required this.imagePath,
     required this.line1,
     required this.line2,
     required this.line3,
+    required this.buttonText,
   });
 }
 
@@ -22,18 +28,7 @@ class DashboardContainer extends StatefulWidget {
 }
 
 class _DashboardContainerState extends State<DashboardContainer> {
-  final PageController _pageController = PageController();
   int _currentPage = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _pageController.addListener(() {
-      setState(() {
-        _currentPage = _pageController.page!.toInt();
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +46,23 @@ class _DashboardContainerState extends State<DashboardContainer> {
         borderRadius: BorderRadius.circular(18),
         child: Stack(
           children: [
-            PageView.builder(
-              controller: _pageController,
+            CarouselSlider.builder(
               itemCount: widget.items.length,
-              itemBuilder: (context, index) {
+              options: CarouselOptions(
+                height: 396,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                viewportFraction: 1.0,
+                autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                autoPlayInterval: Duration(seconds: 3),
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+              ),
+              itemBuilder: (context, index, realIndex) {
                 final item = widget.items[index];
                 return Stack(
                   fit: StackFit.expand,
@@ -69,7 +77,8 @@ class _DashboardContainerState extends State<DashboardContainer> {
                       right: 20,
                       bottom: 60,
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             item.line1,
@@ -77,29 +86,61 @@ class _DashboardContainerState extends State<DashboardContainer> {
                               color: Colors.white,
                               fontSize: isSmallScreen ? 14 : 16,
                               fontWeight: FontWeight.bold,
+                              letterSpacing: 3.0,
                             ),
                             maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 8),
                           Text(
                             item.line2,
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: isSmallScreen ? 18 : 20,
+                              fontSize: isSmallScreen ? 16 : 18,
+                              fontWeight: FontWeight.w400,
                             ),
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            item.line3,
+                            item.line3.replaceAll('. ', '.\n'),
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: isSmallScreen ? 12 : 14,
+                              fontSize: isSmallScreen ? 14 : 16,
+                              fontWeight: FontWeight.w400,
                             ),
-                            maxLines: 2,
+                            maxLines: 4,
                             overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 20),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.onBoardScreen);
+                            },
+                            child: Container(
+                              height: 34,
+                              width: MediaQuery.of(context).size.width * 0.6,
+                              decoration: BoxDecoration(
+                                color: AppColors.globalButton,
+                                borderRadius: BorderRadius.circular(24),
+                              ),
+                              alignment: Alignment.center,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  item.buttonText,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
                           ),
                         ],
                       ),

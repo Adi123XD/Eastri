@@ -27,7 +27,7 @@ class _StartScreenState extends State<StartScreen>
     );
 
     Future.delayed(const Duration(seconds: 3), () {
-      Get.offNamed('/loginScreen');
+      Get.offNamed('/onBoardScreen');
     });
   }
 
