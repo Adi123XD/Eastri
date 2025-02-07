@@ -1,6 +1,6 @@
 import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:eastri_customer_app/utils/appRoutes/app_routes.dart';
-import 'package:eastri_customer_app/widgets/auth_buttons.dart';
+import 'package:eastri_customer_app/views/widgets/auth_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
