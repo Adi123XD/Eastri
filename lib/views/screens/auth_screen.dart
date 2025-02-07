@@ -60,11 +60,13 @@ class _AuthScreenState extends State<AuthScreen> {
                   .textTheme
                   .headlineMedium!
                   .copyWith(color: Colors.black)),
-          Text(AppStrings.enterYourAccountDetailsToGetStarted,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: AppColors.darkGrey)),
+          Text(
+            AppStrings.enterYourAccountDetailsToGetStarted,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: AppColors.darkGrey),
+          ),
           SizedBox(height: AppSizeconfig.screenHeight * 0.02),
           _buildNameField(context),
           SizedBox(height: AppSizeconfig.screenHeight * 0.02),

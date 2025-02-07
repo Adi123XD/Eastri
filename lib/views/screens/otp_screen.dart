@@ -108,6 +108,17 @@ class _OtpScreenState extends State<OtpScreen> {
                     .copyWith(color: AppColors.primaryColor),
               ),
             ),
+            SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+            TextButton(
+              child: Text(
+                AppStrings.resend,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(color: AppColors.primaryColor),
+              ),
+              onPressed: () {},
+            ),
             const Spacer(),
             Padding(
               padding: const EdgeInsets.only(bottom: 20),
@@ -116,7 +127,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 buttonName: AppStrings.continueText,
                 onPressed: isFormValided
                     ? () {
-                        Get.toNamed(AppRoutes.otpScreen);
+                        Get.toNamed(AppRoutes.selectLocationScreen);
                       }
                     : () {},
               ),
@@ -146,6 +157,8 @@ class _OtpScreenState extends State<OtpScreen> {
                 .textTheme
                 .bodyMedium!
                 .copyWith(color: AppColors.darkGrey),
+            maxLines: 2,
+            overflow: TextOverflow.clip,
           ),
         ],
       ),
