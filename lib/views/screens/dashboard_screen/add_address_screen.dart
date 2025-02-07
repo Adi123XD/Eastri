@@ -1,9 +1,9 @@
 import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/address_container.dart';
 import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/saved_address_container.dart';
-import 'package:eastri_customer_app/widgets/custom_bottom_navigation_bar.dart';
-import 'package:eastri_customer_app/widgets/greeting_section.dart';
-import 'package:eastri_customer_app/widgets/translate_contianer.dart';
+import 'package:eastri_customer_app/views/widgets/custom_bottom_navigation_bar.dart';
+import 'package:eastri_customer_app/views/widgets/greeting_section.dart';
+import 'package:eastri_customer_app/views/widgets/translate_contianer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
