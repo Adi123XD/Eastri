@@ -3,6 +3,10 @@
         android:label="eastri_customer_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+         <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyC0uhLCsMu4bxXmCOci_rZn2Sg2vjzhC4s"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

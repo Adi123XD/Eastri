@@ -17,4 +17,5 @@ class AppStrings {
   static const String enterYourOtpCode = "Enter OTP Code";
   static const String resend = "Resend";
   static const String enterYourA4DigitCode = "Enter a 4- digit code sent to ";
+  static const String selectLocation = "Select Location";
 }
