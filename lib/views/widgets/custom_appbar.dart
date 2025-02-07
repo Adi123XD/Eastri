@@ -12,7 +12,6 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: onPressed,
         icon: Icon(Icons.chevron_left_rounded),
         iconSize: 35,
-        
       ),
     );
   }

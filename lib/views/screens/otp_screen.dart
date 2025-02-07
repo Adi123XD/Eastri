@@ -97,14 +97,15 @@ class _OtpScreenState extends State<OtpScreen> {
             Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  color: AppColors.primaryColor.withOpacity(0.4),
+                  border: Border.all(color: Colors.grey),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(20)),
               child: Text(
                 _formatTime(_remainingSeconds),
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
-                    .copyWith(color: Colors.black),
+                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
             const Spacer(),
@@ -190,8 +191,21 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
           );
         },
-        onChanged: (value) {},
+        onChanged: (value) {
+          setState(() {
+            isFormValided = _formKey.currentState?.validate() ?? false;
+            if (_otpController.length != 4) {
+              isFormValided = false;
+            }
+          });
+        },
         onCompleted: (value) {
+          setState(() {
+            isFormValided = _formKey.currentState?.validate() ?? false;
+            if (_otpController.length != 4) {
+              isFormValided = false;
+            }
+          });
           print("Success: $value");
         },
         validator: (value) {

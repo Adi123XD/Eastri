@@ -31,7 +31,6 @@ class AppTheme {
         ),
         bodyMedium: GoogleFonts.inter(
           fontSize: 16,
-          fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
         bodySmall: GoogleFonts.inter(
