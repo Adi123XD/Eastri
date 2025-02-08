@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:eastri_customer_app/res/appColors/app_colors.dart';
+import 'package:eastri_customer_app/services/locationServices/location_service.dart';
 import 'package:eastri_customer_app/utils/appStrings/app_strings.dart';
 import 'package:eastri_customer_app/utils/sizeConfig/app_sizeconfig.dart';
 import 'package:eastri_customer_app/views/widgets/custom_appbar.dart';
@@ -33,18 +34,25 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
     AppStrings.other
   ];
   final List<Marker> _marker = [];
-  final List<Marker> _list = [
-    Marker(
-      markerId: MarkerId("1"),
-      position: LatLng(37.42796133580664, -122.085749655962),
-      infoWindow: InfoWindow(title: "Current Location"),
-    )
-  ];
 
   @override
   void initState() {
     super.initState();
-    _marker.addAll(_list);
+    LocationService().getUserCurrentLocation().then((value) async {
+      print(value.latitude.toString() + value.longitude.toString());
+
+      _marker.add(Marker(
+          markerId: MarkerId("2"),
+          position: LatLng(value.latitude, value.longitude),
+          infoWindow: InfoWindow(title: "Current Location")));
+
+      CameraPosition cameraPosition = CameraPosition(
+          target: LatLng(value.latitude, value.longitude), zoom: 14);
+
+      final GoogleMapController controller = await _controller.future;
+      controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+      setState(() {});
+    });
   }
 
   @override
@@ -78,9 +86,9 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
 
   Widget _buildDraggableSheet() {
     return DraggableScrollableSheet(
-      initialChildSize: 0.3,
+      initialChildSize: 0.2,
       minChildSize: 0.2,
-      maxChildSize: 0.8,
+      maxChildSize: 0.6,
       builder: (context, scrollController) {
         return Container(
           padding: EdgeInsets.all(16),
