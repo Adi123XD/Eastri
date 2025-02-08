@@ -7,13 +7,15 @@ class CustomTextfield extends StatelessWidget {
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final Function(String)? onChanged;
+  final Icon? preffixIcon;
   const CustomTextfield(
       {super.key,
       required this.controller,
       this.hintText,
       this.keyboardType,
       this.validator,
-      this.onChanged});
+      this.onChanged,
+      this.preffixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +26,18 @@ class CustomTextfield extends StatelessWidget {
       style:
           Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),
       decoration: InputDecoration(
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
-            borderRadius: BorderRadius.circular(100)),
-        border: OutlineInputBorder(
-            borderSide: BorderSide(color: AppColors.primaryColor),
-            borderRadius: BorderRadius.circular(100)),
-        hintText: hintText,
-        hintStyle: Theme.of(context)
-            .textTheme
-            .bodyMedium!
-            .copyWith(color: AppColors.darkGrey),
-      ),
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+              borderRadius: BorderRadius.circular(100)),
+          border: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColors.primaryColor),
+              borderRadius: BorderRadius.circular(100)),
+          hintText: hintText,
+          hintStyle: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(color: AppColors.darkGrey),
+          prefixIcon: preffixIcon),
       validator: validator,
       onChanged: onChanged,
     );

@@ -141,7 +141,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   Widget _buildOtpText(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 100),
+      padding: const EdgeInsets.only(top: 80),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -183,7 +183,7 @@ class _OtpScreenState extends State<OtpScreen> {
         ),
         submittedPinTheme: defaultPinTheme.copyWith(
           decoration: defaultPinTheme.decoration!.copyWith(
-            color: AppColors.primaryColor.withOpacity(0.5),
+            color: AppColors.secondaryColor,
           ),
         ),
         cursor: Container(

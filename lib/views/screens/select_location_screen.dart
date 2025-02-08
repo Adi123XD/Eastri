@@ -23,8 +23,15 @@ class SelectLocationScreen extends StatefulWidget {
 class _SelectLocationScreenState extends State<SelectLocationScreen> {
   final Completer<GoogleMapController> _controller = Completer();
   final TextEditingController _yourLoaction = TextEditingController();
-  final TextEditingController _compeletAddress = TextEditingController();
+  final TextEditingController _houseNoBlockNo = TextEditingController();
+  final TextEditingController _buildingName = TextEditingController();
   final TextEditingController _howToReach = TextEditingController();
+  int? _chipSelectedIndex = 0;
+  final List<String> _chipName = [
+    AppStrings.home,
+    AppStrings.work,
+    AppStrings.other
+  ];
   final List<Marker> _marker = [];
   final List<Marker> _list = [
     Marker(
@@ -63,77 +70,150 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
           ),
 
           /// Draggable Bottom Sheet
-          DraggableScrollableSheet(
-            initialChildSize: 0.3,
-            minChildSize: 0.2,
-            maxChildSize: 0.8,
-            builder: (context, scrollController) {
-              return Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.primaryColor,
-                      blurRadius: 10,
-                      spreadRadius: 2,
-                    ),
-                  ],
-                ),
-                child: SingleChildScrollView(
-                  controller: scrollController,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Center(
-                        child: Container(
-                          width: 50,
-                          height: 5,
-                          decoration: BoxDecoration(
-                            color: Colors.grey,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: AppSizeconfig.screenHeight * 0.02),
-                      Text(
-                        AppStrings.selectYourLocation,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Colors.black, fontWeight: FontWeight.w700),
-                      ),
-                      SizedBox(height: AppSizeconfig.screenHeight * 0.02),
-                      Text(
-                        AppStrings.yourLocation,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(color: Colors.black),
-                      ),
-                      CustomTextfield(controller: _yourLoaction),
-                      SizedBox(height: AppSizeconfig.screenHeight * 0.02),
-                      CustomButton(
-                          buttonName: AppStrings.saveAddress,
-                          isEnabled: true,
-                          borderSideEnabled: false,
-                          onPressed: () {}),
-                      SizedBox(height: AppSizeconfig.screenHeight * 0.02),
-                      CustomButton(
-                          buttonName: AppStrings.skip,
-                          isEnabled: false,
-                          backgroundColor: AppColors.secondaryColor,
-                          textColor: Colors.black,
-                          borderSideEnabled: true,
-                          onPressed: () {}),
-                      SizedBox(height: AppSizeconfig.screenHeight * 0.02),
-                    ],
-                  ),
-                ),
-              );
-            },
-          ),
+          _buildDraggableSheet()
         ],
       ),
     );
+  }
+
+  Widget _buildDraggableSheet() {
+    return DraggableScrollableSheet(
+      initialChildSize: 0.3,
+      minChildSize: 0.2,
+      maxChildSize: 0.8,
+      builder: (context, scrollController) {
+        return Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.primaryColor,
+                blurRadius: 10,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: SingleChildScrollView(
+            controller: scrollController,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Container(
+                    width: 50,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                Text(
+                  AppStrings.selectYourLocation,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w700),
+                ),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                Text(
+                  AppStrings.yourLocation,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: Colors.black),
+                ),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.01),
+                CustomTextfield(
+                    controller: _yourLoaction,
+                    preffixIcon: Icon(Icons.location_on),
+                    hintText: AppStrings.address,
+                    validator: (value) {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                Text(
+                  AppStrings.completeAddress,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: Colors.black),
+                ),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                CustomTextfield(
+                    controller: _houseNoBlockNo,
+                    hintText: AppStrings.houseNo,
+                    validator: (value) {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.01),
+                CustomTextfield(
+                    controller: _buildingName,
+                    hintText: AppStrings.buildingName,
+                    validator: (value) {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.01),
+                CustomTextfield(
+                    controller: _howToReach,
+                    hintText: AppStrings.howToReach,
+                    validator: (value) {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                Text(
+                  AppStrings.saveThisLocationForLater,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.01),
+                _buildChip(),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.04),
+                CustomButton(
+                    buttonName: AppStrings.saveAddress,
+                    isEnabled: true,
+                    borderSideEnabled: false,
+                    onPressed: () {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+                CustomButton(
+                    buttonName: AppStrings.skip,
+                    isEnabled: false,
+                    backgroundColor: AppColors.secondaryColor,
+                    textColor: Colors.black,
+                    borderSideEnabled: true,
+                    onPressed: () {}),
+                SizedBox(height: AppSizeconfig.screenHeight * 0.02),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildChip() {
+    return Wrap(
+        spacing: 8.0,
+        children: List.generate(3, (int index) {
+          return ChoiceChip(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide(color: AppColors.primaryColor),
+            ),
+            selectedColor: _chipSelectedIndex == index
+                ? AppColors.primaryColor
+                : AppColors.secondaryColor,
+            disabledColor: AppColors.secondaryColor,
+            backgroundColor: Colors.white,
+            label: Text(
+              _chipName[index],
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    color: _chipSelectedIndex == index
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+            ),
+            selected: _chipSelectedIndex == index,
+            showCheckmark: false,
+            onSelected: (bool value) {
+              setState(() {
+                _chipSelectedIndex = value ? index : null;
+              });
+            },
+          );
+        }));
   }
 }

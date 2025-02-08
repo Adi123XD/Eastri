@@ -20,6 +20,16 @@ class AppStrings {
   static const String selectLocation = "Select Location";
   static const String selectYourLocation = "Select Your Location";
   static const String yourLocation = "Your Location";
+  static const String completeAddress = "Complete Address";
   static const String saveAddress = "Save Address";
   static const String skip = "Skip";
+  static const String home = "Home";
+  static const String work = "Work";
+  static const String other = "Other";
+  static const String houseNo = "House No./ Flat No./Block";
+  static const String buildingName = "Building Name";
+  static const String howToReach = "How to reach (optional)*";
+  static const String address = "XYZ Street, Malad, Mumbai...";
+  static const String saveThisLocationForLater = "Save this location for later";
+
 }

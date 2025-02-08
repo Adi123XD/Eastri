@@ -38,6 +38,7 @@ INJECTED from D:\FlutterProject\Eastri\android\app\src\debug\AndroidManifest.xml
 INJECTED from D:\FlutterProject\Eastri\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 MERGED from [:google_maps_flutter_android] D:\FlutterProject\Eastri\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_plugin_android_lifecycle] D:\FlutterProject\Eastri\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:geocoding_android] D:\FlutterProject\Eastri\build\geocoding_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider_android] D:\FlutterProject\Eastri\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\91892\.gradle\caches\transforms-3\f4d369bb198debe8c89a7b9800366cf3\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] C:\Users\91892\.gradle\caches\transforms-3\990bd840ae842bdd30fc346ade6cd011\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:16:1-24:12
@@ -114,6 +115,8 @@ MERGED from [:google_maps_flutter_android] D:\FlutterProject\Eastri\build\google
 MERGED from [:google_maps_flutter_android] D:\FlutterProject\Eastri\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] D:\FlutterProject\Eastri\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] D:\FlutterProject\Eastri\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding_android] D:\FlutterProject\Eastri\build\geocoding_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:geocoding_android] D:\FlutterProject\Eastri\build\geocoding_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\FlutterProject\Eastri\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider_android] D:\FlutterProject\Eastri\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\91892\.gradle\caches\transforms-3\f4d369bb198debe8c89a7b9800366cf3\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
