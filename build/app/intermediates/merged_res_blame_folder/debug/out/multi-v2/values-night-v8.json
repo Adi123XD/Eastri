@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.eastri_customer_app-mergeDebugResources-24:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.eastri_customer_app-mergeDebugResources-28:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "D:\\FlutterProject\\Eastri\\android\\app\\src\\main\\res\\values-night\\styles.xml",

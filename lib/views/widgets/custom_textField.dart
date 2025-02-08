@@ -12,7 +12,8 @@ class CustomTextfield extends StatelessWidget {
       required this.controller,
       this.hintText,
       this.keyboardType,
-      this.validator, this.onChanged});
+      this.validator,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +24,12 @@ class CustomTextfield extends StatelessWidget {
       style:
           Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),
       decoration: InputDecoration(
-        focusedBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black),
+            borderRadius: BorderRadius.circular(100)),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: AppColors.primaryColor),
-        ),
+            borderSide: BorderSide(color: AppColors.primaryColor),
+            borderRadius: BorderRadius.circular(100)),
         hintText: hintText,
         hintStyle: Theme.of(context)
             .textTheme

@@ -76,6 +76,7 @@ class _AuthScreenState extends State<AuthScreen> {
             padding: const EdgeInsets.only(bottom: 20),
             child: CustomButton(
                 isEnabled: isFormValided,
+                borderSideEnabled: false,
                 buttonName: AppStrings.continueText,
                 onPressed: isFormValided
                     ? () {
@@ -148,10 +149,11 @@ class _AuthScreenState extends State<AuthScreen> {
                 .copyWith(color: Colors.black),
             decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)),
+                    borderSide: BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(100)),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.primaryColor),
-                ),
+                    borderSide: BorderSide(color: AppColors.primaryColor),
+                    borderRadius: BorderRadius.circular(100)),
                 hintText: AppStrings.numberHint,
                 hintStyle: Theme.of(context)
                     .textTheme

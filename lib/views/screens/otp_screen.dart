@@ -124,6 +124,7 @@ class _OtpScreenState extends State<OtpScreen> {
               padding: const EdgeInsets.only(bottom: 20),
               child: CustomButton(
                 isEnabled: isFormValided,
+                borderSideEnabled: false,
                 buttonName: AppStrings.continueText,
                 onPressed: isFormValided
                     ? () {

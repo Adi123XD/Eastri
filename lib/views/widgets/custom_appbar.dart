@@ -11,7 +11,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(title ?? "",
           style: Theme.of(context)
               .textTheme
-              .bodyMedium!
+              .bodyLarge!
               .copyWith(color: Colors.black)),
       centerTitle: false,
       leading: IconButton(
