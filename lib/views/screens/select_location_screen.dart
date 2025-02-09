@@ -7,6 +7,7 @@ import 'package:eastri_customer_app/views/widgets/custom_appbar.dart';
 import 'package:eastri_customer_app/views/widgets/custom_button.dart';
 import 'package:eastri_customer_app/views/widgets/custom_textField.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class SelectLocationScreen extends StatefulWidget {
@@ -38,21 +39,70 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
   @override
   void initState() {
     super.initState();
-    LocationService().getUserCurrentLocation().then((value) async {
-      print(value.latitude.toString() + value.longitude.toString());
+    _getUserLocation();
+  }
 
-      _marker.add(Marker(
-          markerId: MarkerId("2"),
-          position: LatLng(value.latitude, value.longitude),
-          infoWindow: InfoWindow(title: "Current Location")));
+  Future<void> _getUserLocation() async {
+    try {
+      final location = await LocationService().getUserCurrentLocation();
+      final latLng = LatLng(location.latitude, location.longitude);
 
-      CameraPosition cameraPosition = CameraPosition(
-          target: LatLng(value.latitude, value.longitude), zoom: 14);
+      final address =
+          await _getAddressFromLatLng(location.latitude, location.longitude);
+
+      setState(() {
+        _yourLoaction.text = address;
+        _marker.clear();
+        _marker.add(
+          Marker(
+            markerId: const MarkerId("currentLocation"),
+            position: latLng,
+            infoWindow: const InfoWindow(title: "Your Location"),
+          ),
+        );
+      });
 
       final GoogleMapController controller = await _controller.future;
-      controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
-      setState(() {});
-    });
+      controller.animateCamera(CameraUpdate.newCameraPosition(
+        CameraPosition(target: latLng, zoom: 14),
+      ));
+    } catch (e) {
+      print("Error getting location: $e");
+    }
+  }
+
+  // Convert LatLng to Address using Geocoding
+  Future<String> _getAddressFromLatLng(double lat, double lng) async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(lat, lng);
+
+      if (placemarks.isNotEmpty) {
+        Placemark place = placemarks.first;
+
+        String address = [
+          if (place.street != null && place.street!.isNotEmpty) place.street,
+          if (place.subLocality != null && place.subLocality!.isNotEmpty)
+            place.subLocality,
+          if (place.locality != null && place.locality!.isNotEmpty)
+            place.locality,
+          if (place.administrativeArea != null &&
+              place.administrativeArea!.isNotEmpty)
+            place.administrativeArea,
+          if (place.country != null && place.country!.isNotEmpty) place.country,
+          if (place.postalCode != null && place.postalCode!.isNotEmpty)
+            place.postalCode,
+        ].join(", ");
+
+        print("Full Address: $address");
+        return address;
+      } else {
+        print("No address found.");
+        return "Address not found";
+      }
+    } catch (e) {
+      print("Error converting location to address: $e");
+      return "Unknown Location";
+    }
   }
 
   @override
