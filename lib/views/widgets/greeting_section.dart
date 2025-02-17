@@ -1,5 +1,5 @@
 import 'package:eastri_customer_app/res/appColors/app_colors.dart';
-import 'package:eastri_customer_app/widgets/gardient_container.dart';
+import 'package:eastri_customer_app/views/widgets/gardient_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +30,10 @@ class GreetingSection extends StatelessWidget {
 
     return GradientContainer(
       height: 211,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 20,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

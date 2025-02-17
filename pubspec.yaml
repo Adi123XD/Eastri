@@ -68,6 +68,7 @@ flutter:
     - assets/images/onBoarding/
     - assets/images/startScreen/
     - assets/images/dashboard/
+    - assets/images/pricingScreen/
     - assets/fonts/
 
 

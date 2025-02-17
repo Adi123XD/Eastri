@@ -7,6 +7,7 @@ import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/servi
 import 'package:eastri_customer_app/views/screens/dashboard_screen/widgets/wallet_container.dart';
 import 'package:eastri_customer_app/views/widgets/translate_contianer.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -49,7 +50,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ServiceItem(
                         imagePath: 'assets/images/dashboard/iron2.png',
                         onTap: () {
-                          print("Iron 2 tapped");
+                          Get.offNamed('/pricingTabScreen');
                         },
                         imageHeight: screenWidth * 0.2,
                         imageWidth: screenWidth * 0.2,
@@ -58,7 +59,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ServiceItem(
                         imagePath: 'assets/images/dashboard/iron1.png',
                         onTap: () {
-                          print("Iron 1 tapped");
+                          Get.offNamed('/pricingTabScreen');
                         },
                         imageHeight: screenWidth * 0.33,
                         imageWidth: screenWidth * 0.33,

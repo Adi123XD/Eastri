@@ -11,4 +11,6 @@ class AppColors {
   static const walletContainer = Color(0xFF2C6A89);
   static const addressContainer = Color(0xFFEAEAEA);
   static const addressText = Colors.black;
+  static const walletText = Colors.white;
+  static const amountText = Color(0xFF2C6A89);
 }
