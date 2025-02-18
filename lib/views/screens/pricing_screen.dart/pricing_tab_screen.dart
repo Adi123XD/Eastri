@@ -34,9 +34,9 @@ class _PricingTabScreenState extends State<PricingTabScreen>
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 70, // Adjusted height for tabs
+          toolbarHeight: 60,
           automaticallyImplyLeading: false,
-          elevation: 0, // Remove app bar shadow
+          elevation: 0,
           backgroundColor: Colors.white60,
           flexibleSpace: Column(
             mainAxisAlignment: MainAxisAlignment.end,
