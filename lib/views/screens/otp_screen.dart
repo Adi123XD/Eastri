@@ -128,7 +128,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 buttonName: AppStrings.continueText,
                 onPressed: isFormValided
                     ? () {
-                        Get.toNamed(AppRoutes.selectLocationScreen);
+                        Get.toNamed(AppRoutes.dashboardScreen);
                       }
                     : () {},
               ),

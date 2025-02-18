@@ -1,1 +1,0 @@
- C:\\Users\\3501\\StudioProjects\\eastri_customer_app\\.dart_tool\\flutter_build\\8439007f4862bdd60a020d14d2242448\\native_assets.yaml: 
