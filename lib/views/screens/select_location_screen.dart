@@ -110,7 +110,9 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
     return Scaffold(
       appBar: CustomAppbar(
         title: AppStrings.selectLocation,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
       ),
       body: Stack(
         children: [
