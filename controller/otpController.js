@@ -25,7 +25,7 @@ exports.sendMessage = async (req, res, next) => {
 };
 
 exports.verifyOTP = async (req, res, next) => {
-  const { otp, phoneNumber, countryCode } = req.body;
+  const { otp, phoneNumber, countryCode ,name } = req.body;
   // console.log(otp);
   try {
   

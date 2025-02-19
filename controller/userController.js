@@ -1,7 +1,7 @@
 
 const User = require('../model/userModel.js')
 exports.insertUser = async (req, res) => {
-  const { name = null, email = null, phoneNumber } = req.body;
+  const { name , email = null, phoneNumber } = req.body;
 
   if (!phoneNumber) {
     return res.status(400).json({ message: "Phone number is required" });

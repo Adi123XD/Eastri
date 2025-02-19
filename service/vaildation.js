@@ -37,3 +37,36 @@ exports.validateIndianPhoneNumber = async (phoneNumber) => {
       return { success: false, message: err.errors[0] };
     }
   };
+
+
+  exports.validateAddress = async (addressData) => {
+    const schema = yup.object().shape({
+        fullAddress: yup.string().max(255).required('Full address is required'),
+        street: yup.string().max(150).nullable(),
+        city: yup.string().max(100).required('City is required'),
+        state: yup.string().max(100).required('State is required'),
+        country: yup.string().max(100).required('Country is required'),
+        postalCode: yup
+            .string()
+            .matches(/^\d{5,10}$/, 'Invalid postal code')
+            .required('Postal code is required'),
+        latitude: yup
+            .number()
+            .min(-90, 'Invalid latitude')
+            .max(90, 'Invalid latitude')
+            .required('Latitude is required'),
+        longitude: yup
+            .number()
+            .min(-180, 'Invalid longitude')
+            .max(180, 'Invalid longitude')
+            .required('Longitude is required'),
+        placeId: yup.string().max(100).nullable(),
+    });
+
+    try {
+        await schema.validate(addressData);
+        return { success: true, message: 'Validation successful!' };
+    } catch (err) {
+        return { success: false, message: err.errors[0] };
+    }
+};
