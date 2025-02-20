@@ -20,7 +20,7 @@ class CustomRowTab extends StatefulWidget {
       'assets/images/pricingScreen/women.png',
       'assets/images/pricingScreen/kids.png',
     ],
-    this.tabImagesTopPosition = const [-9, -14, -28],
+    this.tabImagesTopPosition = const [-9, -13, -28],
     this.tabImagesLeftPosition = const [10, 13, 3],
     this.imageHeights = const [76, 80, 95],
     this.selectedColor = const Color(0xFF2E6F90),
@@ -65,6 +65,7 @@ class _CustomRowTabState extends State<CustomRowTab> {
             ),
           ),
         ),
+        SizedBox(height: 10),
         Expanded(
           child: PageView(
             controller: _pageController,

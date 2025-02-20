@@ -67,7 +67,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ServiceItem(
                             imagePath: 'assets/images/dashboard/iron1.png',
                             onTap: () {
-                              Get.offNamed('/pricingTabScreen');
+                              Get.offNamed(
+                                '/pricingTabScreen',
+                                arguments: {'selectedIndex': 1},
+                              );
                             },
                             imageHeight: screenWidth * 0.33,
                             imageWidth: screenWidth * 0.33,

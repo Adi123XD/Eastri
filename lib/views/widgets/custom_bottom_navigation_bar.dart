@@ -17,7 +17,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   final Map<String, int> _routeIndices = {
     '/dashboardScreen': 0,
     '/pricingTabScreen': 1,
-    '/wallet1Screen': 2,
+    '/checkoutScreen': 2,
     '/addAddressScreen': 3,
   };
 

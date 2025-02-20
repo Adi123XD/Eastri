@@ -1,7 +1,7 @@
+import 'package:eastri_customer_app/views/screens/pricing_screen.dart/kids_pricing_screen.dart';
+import 'package:eastri_customer_app/views/screens/pricing_screen.dart/womens_pricing_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:eastri_customer_app/views/screens/dashboard_screen/add_address_screen.dart';
-import 'package:eastri_customer_app/views/screens/dashboard_screen/dashboard_screen.dart';
-import 'package:eastri_customer_app/views/screens/wallet_screen/wallet_screen1.dart';
+import 'mens_pricing_screen.dart';
 import 'widgets/custom_row_tab.dart';
 
 class SteamIronPricingScreen extends StatelessWidget {
@@ -10,13 +10,14 @@ class SteamIronPricingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white60,
       body: Padding(
         padding: const EdgeInsets.only(top: 20.0),
         child: CustomRowTab(
           pages: [
-            WalletScreen1(),
-            AddAddressScreen(),
-            DashboardScreen(),
+            MensPricingScreen(),
+            WomensPricingScreen(),
+            KidsPricingScreen(),
           ],
         ),
       ),

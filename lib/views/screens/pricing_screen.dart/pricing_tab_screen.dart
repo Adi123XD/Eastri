@@ -4,7 +4,11 @@ import 'package:eastri_customer_app/views/widgets/custom_bottom_navigation_bar.d
 import 'package:flutter/material.dart';
 
 class PricingTabScreen extends StatefulWidget {
-  const PricingTabScreen({super.key});
+  final int selectedIndex;
+  const PricingTabScreen({
+    super.key,
+    this.selectedIndex = 0,
+  });
 
   @override
   State<PricingTabScreen> createState() => _PricingTabScreenState();
@@ -17,7 +21,11 @@ class _PricingTabScreenState extends State<PricingTabScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+      initialIndex: widget.selectedIndex,
+    );
     _tabController.addListener(() {
       setState(() {});
     });
