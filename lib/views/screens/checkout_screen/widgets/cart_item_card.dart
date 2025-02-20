@@ -44,7 +44,7 @@ class CartItemCard extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(5),
-            height: 101,
+            height: 110,
             width: 90,
             decoration: BoxDecoration(
               color: AppColors.globalButton,
