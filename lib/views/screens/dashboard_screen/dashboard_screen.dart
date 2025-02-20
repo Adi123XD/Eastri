@@ -179,6 +179,30 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                 '10 shirts and 5 trousers are your go-to. Earn 20 reward points when you schedule now!',
                             buttonText: 'Claim & Schedule',
                           ),
+                          DashboardItem(
+                            imagePath:
+                                'assets/images/dashboard/DashContainer2.png',
+                            line1: 'FEATURED FOR YOU',
+                            line2: "It's winter!",
+                            line3: 'Special Care for woolens available.',
+                            buttonText: 'Order now',
+                          ),
+                          DashboardItem(
+                            imagePath:
+                                'assets/images/dashboard/DashContainer3.png',
+                            line1: 'FEATURED FOR YOU',
+                            line2: 'Try Eastri Pro for Rs. 50/- off',
+                            line3: 'Ends in 00:28:11',
+                            buttonText: 'Flat 50% off',
+                          ),
+                          DashboardItem(
+                            imagePath:
+                                'assets/images/dashboard/DashContainer4.png',
+                            line1: 'FEATURED FOR YOU',
+                            line2: 'Your laundry will be ready tomorrow.',
+                            line3: 'Need express delivery?',
+                            buttonText: 'Upgrade to Express',
+                          ),
                         ],
                       ),
                       const SizedBox(height: 20),
