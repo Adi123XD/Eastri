@@ -5,6 +5,8 @@ class AppStrings {
   static const String continueText = "Continue";
   static const String numberHint = "1234567890";
   static const String name = "Name";
+  static const String signIn = "Sign In";
+  static const String createAnAccount = "Create an Account";
   static const String nameIsRequired = "Name is required";
   static const String phoneNumberIsRequired = "Phone number is required";
   static const String phoneNumber = "Phone number";
@@ -31,5 +33,7 @@ class AppStrings {
   static const String howToReach = "How to reach (optional)*";
   static const String address = "XYZ Street, Malad, Mumbai...";
   static const String saveThisLocationForLater = "Save this location for later";
+  static const String welcomeToEastri = "Welcome to eastri";
+  static const String tiredOfWaitingDaysForClean = "Tired of waiting days for clean clothes? Get your clothes ironed done in just one day!";
 
 }
