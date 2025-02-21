@@ -1,0 +1,17 @@
+{
+  "message": "Address saved successfully",
+  "address": {
+    "id": 1,
+    "fullAddress": "1600 Amphitheatre Parkway, Mountain View, CA 94043, USA",
+    "street": "1600 Amphitheatre Parkway",
+    "city": "Mountain View",
+    "state": "California",
+    "country": "United States",
+    "postalCode": "94043",
+    "latitude": 37.4224764,
+    "longitude": -122.0842499,
+    "placeId": "ChIJ2eUgeAK6j4ARbn5u_wAGqWA",
+    "createdAt": "2025-02-20T10:00:00.000Z",
+    "updatedAt": "2025-02-20T10:00:00.000Z"
+  }
+}

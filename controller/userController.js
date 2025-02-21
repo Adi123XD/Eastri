@@ -1,5 +1,5 @@
 
-const User = require('../model/userModel.js')
+const User = require('../models/userModel.js')
 exports.insertUser = async (req, res) => {
   const { name , email = null, phoneNumber } = req.body;
 

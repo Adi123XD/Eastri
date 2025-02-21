@@ -1,5 +1,5 @@
   const {validateAddress}  = require("../service/vaildation.js")
-const {Address}  = require('../model/addressModel.js')
+const {Address}  = require('../models/addressModel.js')
 
 
 exports.saveAddress = async (req, res) => {
