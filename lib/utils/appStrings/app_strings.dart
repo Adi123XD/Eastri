@@ -33,7 +33,7 @@ class AppStrings {
   static const String howToReach = "How to reach (optional)*";
   static const String address = "XYZ Street, Malad, Mumbai...";
   static const String saveThisLocationForLater = "Save this location for later";
-  static const String welcomeToEastri = "Welcome to eastri";
-  static const String tiredOfWaitingDaysForClean = "Tired of waiting days for clean clothes? Get your clothes ironed done in just one day!";
-
+  static const String welcomeToEastri = "Welcome To Eastri";
+  static const String tiredOfWaitingDaysForClean =
+      "Tired of waiting days for clean clothes? Get your clothes ironed done in just one day!";
 }
