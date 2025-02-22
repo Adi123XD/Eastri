@@ -2,6 +2,7 @@ import 'package:eastri_customer_app/res/appColors/app_colors.dart';
 import 'package:eastri_customer_app/utils/appRoutes/app_routes.dart';
 import 'package:eastri_customer_app/utils/appStrings/app_strings.dart';
 import 'package:eastri_customer_app/utils/sizeConfig/app_sizeconfig.dart';
+import 'package:eastri_customer_app/views/widgets/custom_appbar.dart';
 import 'package:eastri_customer_app/views/widgets/custom_button.dart';
 import 'package:eastri_customer_app/views/widgets/custom_textField.dart';
 import 'package:flutter/material.dart';
@@ -30,20 +31,28 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void _validateForm() {
-    setState(() {
-      isFormValided = _formKey.currentState?.validate() ?? false;
-      if (nameController.text.isEmpty || phoneController.text.isEmpty) {
-        isFormValided = false;
-      }
-    });
+    setState(
+      () {
+        isFormValided = _formKey.currentState?.validate() ?? false;
+        if (nameController.text.isEmpty || phoneController.text.isEmpty) {
+          isFormValided = false;
+        }
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppbar(
+        onPressed: () => Get.back(),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Form(key: _formKey, child: _buildAuthText(context)),
+        child: Form(
+          key: _formKey,
+          child: _buildAuthText(context),
+        ),
       ),
     );
   }
