@@ -8,4 +8,6 @@ class AppColors {
   static const globalButton = Color(0xFF2C6A89);
   static const walletContainer = Color(0xFF2C6A89);
   static const addressContainer = Color(0xFFEAEAEA);
+  static const amountText = Color(0xFF2C6A89);
+  static const walletText = Colors.white;
 }
